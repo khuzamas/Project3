@@ -1,6 +1,7 @@
 class FridgesController < ApplicationController
   
     def home
+       @fridges= Fridge.all
         @fridge= Fridge.new
        
       end
@@ -15,7 +16,7 @@ class FridgesController < ApplicationController
 
     def create
         @fridge= Fridge.create(fridge_params)
-        redirect_to @fridge
+        redirect_to fridges_home_path
     end
    
     def show
@@ -27,7 +28,7 @@ class FridgesController < ApplicationController
         @fridge = Fridge.find(params[:id])
         @fridge.destroy
       
-        redirect_to fridges_path, notice: "Delete success"
+        redirect_to fridges_home_path, notice: "Delete success"
       end
 
     private
