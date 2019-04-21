@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+List.create(tiltle: 'lemon', description: '4 killos')
+
+
