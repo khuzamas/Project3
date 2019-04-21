@@ -1,3 +1,25 @@
 <h1>Fridge show</h1>
 
-<%= @fridge.name %>
+New Fridge is <%= @fridge.name %><br>
+
+<%= link_to 'Fridge index', fridges_path %><br>
+<%= link_to 'HomePage', fridges_home_path %> <br>
+
+<br><h1>Available Fridges</h1>
+
+<% @fridges.each do |fridge| %>
+    <%= fridge.name %> 
+    <%= link_to 'Show', fridge %>
+    <%= link_to 'Delete', 
+                 fridge_path(fridge), 
+                             method: :delete, 
+                             data: { confirm: 'Are you sure?' } %> 
+
+    <br/>
+
+<% end %>
+<br/>
+<%= link_to 'New Fridges', new_fridge_path %>
+
+
+

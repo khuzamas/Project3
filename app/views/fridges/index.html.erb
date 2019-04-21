@@ -2,7 +2,11 @@
 <%= link_to 'New Fridge', new_fridge_path %>
 <% @fridges.each do |fridge| %>
 <li>
-<%= link_to fridge.name, fridge_path(fridge) %>
+<%= link_to fridge.name, fridge_path(fridge) %>    <%= link_to 'Delete', 
+                 fridge_path(fridge), 
+                             method: :delete, 
+                             data: { confirm: 'Are you sure?' } %>
 </li>
-
 <% end %>
+
+
