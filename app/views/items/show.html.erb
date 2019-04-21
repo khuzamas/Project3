@@ -1,0 +1,11 @@
+<h1>Item show</h1>
+
+<p><%= @item.name %></p>
+<p><%= @item.exp_date %></p>
+<p><%= @item.stock %></p>
+<p><%= @item.category %></p>
+<% @item.fridges.each do |fridge|%>
+<p><%= fridge.name %></p>
+<% end %>
+
+<img src="<%= @item.image %>" alt="">

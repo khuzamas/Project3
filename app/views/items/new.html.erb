@@ -1,0 +1,38 @@
+<h1>Item new</h1>
+
+<%= form_for @item do |f| %>
+    <p>
+        <%= f.label :name, "Item Name" %>
+        <%= f.text_field :name %>
+    </p>
+
+    <p>
+        <%= f.label :exp_date, "Exp date" %>
+        <%= f.date_field :exp_date %>
+    </p>
+
+    <p>
+        <%= f.label :stock, "stock" %>
+        <%= f.text_field :stock %>
+    </p>
+
+    <p>
+        <%= f.label :category, "category" %>
+        <%= f.text_field :category %>
+    </p>
+
+    <p>
+        <%= f.label :image, "image" %>
+        <%= f.text_field :image %>
+    </p>
+
+    <p>
+        <%= f.collection_select :fridge_ids, Fridge.all, :id, :name %>
+    </p>
+    
+
+    <p>
+        <%= f.submit 'Create' %>
+    </p>
+<% end %>
+

@@ -1,0 +1,10 @@
+<h1>Fridge edit</h1>
+
+<%= form_for @fridge do |f| %>
+
+<%= f.collection_select(:item_ids, Item.all, :id, :name) %>
+<p>
+    <%= f.submit 'Add' %>
+</p>
+
+<% end %>
