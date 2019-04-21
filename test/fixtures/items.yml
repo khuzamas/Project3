@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exp_date: 2019-04-21 10:40:06
+  stock: 1
+  category: MyString
+  image: MyString
+
+two:
+  exp_date: 2019-04-21 10:40:06
+  stock: 1
+  category: MyString
+  image: MyString
