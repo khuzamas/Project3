@@ -1,5 +1,10 @@
 class FridgesController < ApplicationController
   
+    def home
+        @fridge= Fridge.new
+       
+      end
+
     def index
         @fridges = Fridge.all
     end
@@ -13,6 +18,7 @@ class FridgesController < ApplicationController
         redirect_to @fridge
     end
 
+   
     def show
         @fridge= Fridge.find(params[:id])
     end
@@ -35,6 +41,14 @@ class FridgesController < ApplicationController
             render 'edit'
         end
     end
+
+    def destroy
+        @fridge = Fridge.find(params[:id])
+        @fridge.destroy
+      
+        redirect_to fridges_path, notice: "Delete success"
+    end
+
 
     private
         def fridge_params

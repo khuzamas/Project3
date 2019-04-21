@@ -12,3 +12,7 @@ Item.create(name: "1", exp_date: "15-3-1990", stock: 3, category: "food", image:
 Item.create(name: "2", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
 Item.create(name: "3", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
 Item.create(name: "4", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+
+List.create(tiltle: 'lemon', description: '4 killos')
+
+
