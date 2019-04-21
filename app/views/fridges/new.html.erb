@@ -1,0 +1,14 @@
+<h1>Fridge new</h1>
+
+<%= form_for @fridge do |f| %>
+  <p>
+    <%= f.label :name, "Fridge Name" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Fridge index', fridges_path %>
