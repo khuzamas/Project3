@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_114254) do
+ActiveRecord::Schema.define(version: 2019_04_22_115445) do
 
   create_table "fridges", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "info_id"
-    t.integer "user_id"
   end
 
   create_table "fridges_items", id: false, force: :cascade do |t|
@@ -28,6 +27,11 @@ ActiveRecord::Schema.define(version: 2019_04_22_114254) do
   create_table "fridges_options", id: false, force: :cascade do |t|
     t.integer "fridge_id", null: false
     t.integer "option_id", null: false
+  end
+
+  create_table "fridges_users", id: false, force: :cascade do |t|
+    t.integer "fridge_id"
+    t.integer "user_id"
   end
 
   create_table "infos", force: :cascade do |t|
