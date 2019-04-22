@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   root "fridges#home"
   devise_for :users
   resources :lists
-  resources :fridges
-  resources :items
+
+  resources :fridges do
+    resources :items
+  end
 
   get 'fridges/:id/add_user' => 'fridges#add_user'
   patch 'fridges/:id/update_user' => 'fridges#update_user'

@@ -4,8 +4,7 @@
 <p><%= @item.exp_date %></p>
 <p><%= @item.stock %></p>
 <p><%= @item.category %></p>
-<% @item.fridges.each do |fridge|%>
-<p><%= fridge.name %></p>
-<% end %>
+
+<%= link_to 'Back to Fridge', :back %>
 
 <img src="<%= @item.image %>" alt="">

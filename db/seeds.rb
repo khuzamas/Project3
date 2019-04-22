@@ -8,12 +8,13 @@
 
 Item.destroy_all
 
-Item.create(name: "1", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-Item.create(name: "2", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-Item.create(name: "3", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-Item.create(name: "4", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+# Item.create(name: "1", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+# Item.create(name: "2", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+# Item.create(name: "3", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+# Item.create(name: "4", exp_date: "15-3-1990", stock: 3, category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
 
 List.create(tiltle: 'lemon', description: '4 killos')
+
 
 User.destroy_all
 User.create(email: "ri1n1g")
@@ -21,3 +22,10 @@ User.create(email: "ri1nfffff")
 User.create(email: "eeeeeee")
 
 
+Option.create(name: "1", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "2", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "3", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "4", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+
+
+# Fridge.destroy_all
