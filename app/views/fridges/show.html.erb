@@ -1,11 +1,17 @@
 <h1>Fridge show</h1>
 
-<%= @fridge.name %>
+<p>
+    <%= @fridge.name %>
+</p>
+
 
 <p>items:</p>
 <% @fridge.items.each do |item| %>
     <% item.options.each do |o|%>
-        <%= o.name %>
+    <li>
+        <%= link_to o.name, fridge_item_path(item)%>
+    </li>
+        
     <% end %>
 <% end %>
 
