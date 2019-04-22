@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
     def index
         @items= Item.all
+        @fridge = Fridge.find(params[:fridge_id])
     end
 
     def show

@@ -15,6 +15,8 @@ Item.destroy_all
 
 List.create(tiltle: 'lemon', description: '4 killos')
 
+Option.destroy_all
+
 Option.create(name: "1", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
 Option.create(name: "2", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
 Option.create(name: "3", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
