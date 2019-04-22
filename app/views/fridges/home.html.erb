@@ -22,17 +22,12 @@
 
 <br><h1>Available Fridges</h1>
 
-<% @fridges.each do |fridge| %>
-    <%= fridge.name %> 
-    <%= link_to 'Show', fridge %>
-    <%= link_to 'Delete', 
-                 fridge_path(fridge), 
-                             method: :delete, 
-                             data: { confirm: 'Are you sure?' } %> 
 
-    <br/>
 
+<% current_user.fridges.each do |f| %>
+    <%= f.name %> <br>
 <% end %>
+
 <br/>
 <%= link_to 'New Fridges', new_fridge_path %>
 
