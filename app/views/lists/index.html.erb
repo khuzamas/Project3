@@ -1,6 +1,6 @@
 
 <h1 class="list1"> Shopping list</h1>
-  <% @lists.each do |list| %>
+  <% @user.lists.each do |list| %>
  
    <h2> <%= link_to list.tiltle, list %></h2>
    <p>  <%= list.description %> </p>
