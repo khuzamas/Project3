@@ -53,6 +53,13 @@ class ItemsController < ApplicationController
         end
     end
 
+    def destroy
+        fridge= Fridge.find(params[:fridge_id])
+        @item = fridge.items.find(params[:id])
+        @item.destroy
+        redirect_to fridge
+    end
+
     private
         def item_params
             params.require(:item).permit(:name, :exp_date, :stock, :category, :image, :fridge_id, :option_ids => [])

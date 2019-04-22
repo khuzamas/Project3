@@ -11,6 +11,7 @@ You are in <%= @fridge.name %> Fridge
     <% item.options.each do |o|%>
     <li>
         <%= link_to o.name, fridge_item_path(item)%>
+        <%= link_to 'Delete', fridge_item_path(item), method: :delete %>
     </li>
         
     <% end %>
