@@ -1,10 +1,38 @@
 <h1>Fridge edit</h1>
-
+<h2>Add item</h2>
 <%= form_for @fridge do |f| %>
 
-<%= f.collection_select(:item_ids, Item.all, :id, :name) %>
+
+<%= f.label 'Items' %>
+    <%= f.collection_select(:item_ids, Item.all, :id, :name) %>
 <p>
-    <%= f.submit 'Add' %>
+        <%= f.label :exp_date, "Exp date" %>
+        <%= f.date_field :exp_date %>
 </p>
+
+<%
+=begin %>
+<%= f.label 'Item2' %>
+<%= f.collection_select(:options, Option.all, :id, :name) %>
+<%
+=end %>
+    <% 
+=begin %>  
+<p>
+        <%= f.label :exp_date, "Exp date" %>
+        <%= f.date_field :exp_date %>
+    </p>
+
+    <p>
+        <%= f.label :stock, "stock" %>
+        <%= f.text_field :stock %>
+    </p>
+
+<% 
+=end %>
+    
+    <p>
+        <%= f.submit 'Add' %>
+    </p>
 
 <% end %>

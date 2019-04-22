@@ -10,19 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_04_21_110852) do
+
 
   create_table "fridges", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "info_id"
-    t.integer "user_id"
   end
 
   create_table "fridges_items", id: false, force: :cascade do |t|
     t.integer "fridge_id", null: false
     t.integer "item_id", null: false
+  end
+
+  create_table "fridges_options", id: false, force: :cascade do |t|
+    t.integer "fridge_id", null: false
+    t.integer "option_id", null: false
+  end
+
+  create_table "fridges_users", id: false, force: :cascade do |t|
+    t.integer "fridge_id"
+    t.integer "user_id"
   end
 
   create_table "infos", force: :cascade do |t|
@@ -40,11 +51,25 @@ ActiveRecord::Schema.define(version: 2019_04_21_110852) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "fridge_id"
+  end
+
+  create_table "items_options", id: false, force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "option_id", null: false
   end
 
   create_table "lists", force: :cascade do |t|
     t.string "tiltle"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,17 @@
+<h1>Add_user_page</h1>
+<p>Users</p>
+
+
+<%# @users.each do |user| %>
+<li><%# %></li>
+<%# end %>
+
+
+<%= form_for @fridge, url: "/fridges/#{@fridge.id}/update_user" do |f| %>
+
+<%= f.collection_select(:user_ids, User.all, :id, :email) %>
+<p>
+    <%= f.submit 'Add' %>
+</p>
+
+<% end %>

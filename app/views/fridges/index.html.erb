@@ -1,10 +1,17 @@
 <h1>Fridge index</h1>
-<%= link_to 'New Fridge', new_fridge_path %>
-<% @fridges.each do |fridge| %>
+
+<h1><%= current_user.email %>'s Fridges</h1>
+
+<% current_user.fridges.each do |fridge| %>
 <li>
 <%= link_to fridge.name, fridge_path(fridge) %>    
 <%= link_to 'Delete', fridge_path(fridge), method: :delete, data: { confirm: 'Are you sure?' } %>
 </li>
+
 <% end %>
+<%= link_to 'Add New Fridge', new_fridge_path %>
+
+
+<br><%= link_to 'Back To Home Page', fridges_home_path %>
 
 
