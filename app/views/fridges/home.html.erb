@@ -21,18 +21,13 @@
 <%= link_to 'Delete Account', user_registration_path, method: :delete %></p>
 
 <br><h1>Available Fridges</h1>
-
-
-
-<% current_user.fridges.each do |f| %>
-    <%= f.name %> <br>
+<% current_user.fridges.each do |fridge| %>
+<%= link_to fridge.name, fridge_path(fridge) %> 
+<%= link_to 'Delete', fridge_path(fridge), method: :delete, data: { confirm: 'Are you sure?' } %> 
+ <br>
 <% end %>
 
 <br/>
-<%= link_to 'New Fridges', new_fridge_path %>
-
-
-
 
 <% else %>
 <%= link_to 'Log In', new_user_session_path %> <br> 

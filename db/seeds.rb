@@ -15,4 +15,9 @@ Item.create(name: "4", exp_date: "15-3-1990", stock: 3, category: "food", image:
 
 List.create(tiltle: 'lemon', description: '4 killos')
 
+User.destroy_all
+User.create(email: "ri1n1g")
+User.create(email: "ri1nfffff")
+User.create(email: "eeeeeee")
+
 
