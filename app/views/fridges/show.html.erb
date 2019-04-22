@@ -4,11 +4,11 @@
 
 <p>items:</p>
 <% @fridge.items.each do |item| %>
-<li><%= item.name %></li>
+<li><%= link_to item.name, fridge_item_path(item) %></li>
 <% end %>
 
 <p>
-<%= link_to 'Add item', edit_fridge_path %>
+<%= link_to 'Add item', new_fridge_item_path(@fridge) %>
 </p>
 
 <p>

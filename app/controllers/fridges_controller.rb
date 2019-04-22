@@ -45,7 +45,6 @@ class FridgesController < ApplicationController
     def destroy
         @fridge = Fridge.find(params[:id])
         @fridge.destroy
-      
         redirect_to fridges_path, notice: "Delete success"
     end
 
