@@ -2,8 +2,7 @@ class FridgesController < ApplicationController
   
     def home
         @fridge= Fridge.new
-       
-      end
+    end
 
     def index
         @fridges = Fridge.all
@@ -23,24 +22,24 @@ class FridgesController < ApplicationController
         @fridge= Fridge.find(params[:id])
     end
 
-    def edit
-        @fridge= Fridge.find(params[:id])
-    end
+    # def edit
+    #     @fridge= Fridge.find(params[:id])
+    # end
 
-    def update
-        @fridge = Fridge.find(params[:id])
+    # def update
+    #     @fridge = Fridge.find(params[:id])
 
-        new_item = Item.find(params[:fridge][:item_ids])
+    #     new_item = Item.find(params[:fridge][:item_ids])
         
-        puts new_item 
-        @fridge.items.push(new_item)
+    #     puts new_item 
+    #     @fridge.items.push(new_item)
  
-        if @fridge.update(fridge_params)
-            redirect_to @fridge
-        else
-            render 'edit'
-        end
-    end
+    #     if @fridge.update(fridge_params)
+    #         redirect_to @fridge
+    #     else
+    #         render 'edit'
+    #     end
+    # end
 
     def destroy
         @fridge = Fridge.find(params[:id])
@@ -51,6 +50,7 @@ class FridgesController < ApplicationController
 
     private
         def fridge_params
-            params.require(:fridge).permit(:name, :item_ids => [])
+            # params.require(:fridge).permit(:name, :item_ids => [])
+            params.require(:fridge).permit(:name)
         end
 end

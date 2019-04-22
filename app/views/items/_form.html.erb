@@ -1,28 +1,18 @@
-<%= form_for @item do |f| %>
-    <p>
-        <%= f.label :name, "name" %>
-        <%= f.text_field :name %>
-    </p>
+<%= form_with(model: [ @fridge, @fridge.items.build ], local: true) do |f| %>
 
-    <p>
-        <%= f.label :exp_date, "Exp date" %>
-        <%= f.date_field :exp_date %>
-    </p>
+    <%= f.label 'Items' %>
+    <%= f.collection_select(:option_ids, Option.all, :id, :name) %>
+
+    
+<p>
+    <%= f.label :exp_date, "Exp date" %>
+    <%= f.date_field :exp_date %>
+</p>
 
     <p>
         <%= f.label :stock, "stock" %>
         <%= f.text_field :stock %>
-    </p>  
-
-    <p>
-        <%= f.label :category, "category" %>
-        <%= f.text_field :category %>
-    </p>
-
-    <p>
-        <%= f.label :image, "image" %>
-        <%= f.text_field :image %>
-    </p>
+    </p> 
     
     <p>
         <%= f.submit 'Create' %>

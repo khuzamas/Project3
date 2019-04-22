@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-    has_and_belongs_to_many :fridges
-    # belongs_to :option
+    belongs_to :fridge
+    has_and_belongs_to_many :options 
 end
