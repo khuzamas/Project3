@@ -1,9 +1,10 @@
 <h1>Fridge show</h1>
 
+
+You are in <%= @fridge.name %> Fridge 
 <p>
     <%= @fridge.name %>
 </p>
-
 
 <p>items:</p>
 <% @fridge.items.each do |item| %>
@@ -15,9 +16,20 @@
     <% end %>
 <% end %>
 
-
 <p>
     <%= link_to 'Add item', new_fridge_item_path(@fridge) %>
+</p>
+<br>
+
+<p>Users</p>
+<% @fridge.users.each do |user| %>
+<li><%= user.email%></li>
+<% end %>
+
+
+
+<p>
+<%= link_to 'Add User To This Fridge', "/fridges/#{@fridge.id}/add_user"	 %>
 </p>
 
 <p>
