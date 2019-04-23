@@ -1,5 +1,23 @@
+ <%= render 'lists/nav' %>
 
- <%= render partial: 'form' %>
+<h1> new shopping list </h1>
+<%= form_for @list do |f| %>
+<div class="form-group">
+<%= f.label "item" %>
+    <%= f.text_field :tiltle%>
+    <small class="form-text text-muted"> Add what you need </small>
+  </div>
+    <br>
+<%= f.label "description" %>
+	<%= f.text_field  :description %>
+<br>
+    <%= f.label "Completed" %>
+    <%=  f.check_box :Completed%>
+<br>
+	<%= f.submit "Add to my list", :class => "button" %>
+  
+<% end %>
 
+<%= link_to 'Back', lists_path %>
 
 

@@ -5,10 +5,8 @@ Rails.application.routes.draw do
 
   root "fridges#index"
   devise_for :users
-  
-  resources :users
-    resources :lists
-  
+  resources :lists
+
   resources :fridges do
     resources :items
   end

@@ -23,10 +23,10 @@ class ListsController < ApplicationController
     @list= List.create(list_params)
     user.lists << @list
     @list.save
-    redirect_to @list
+    redirect_to url:"/lists"  
 
   end
-
+  
   def edit
     @list = List.find(params[:id])
   end
@@ -47,7 +47,7 @@ class ListsController < ApplicationController
   private
     
   def list_params
-    params.require(:list).permit(:tiltle, :description, :user_id)
+    params.require(:list).permit(:tiltle, :description, :Completed, :user_id)
   end
 
   def find_item

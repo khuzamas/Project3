@@ -1,4 +1,12 @@
+ <%= render 'lists/nav' %>
+
 <h1>edit shopping list</h1>
-<div class="col-md-6 col-md-offset-3">
- <%= render partial: 'form' %>
-</div>
+<%= form_for @list do |f| %>
+<%= f.label "item" %>
+    <%= f.text_field :tiltle%>
+<%= f.label "description" %>
+	<%= f.text_field  :description %>
+	<%= f.submit "add" %>
+  
+<% end %>
+<%= link_to 'Back', lists_path %>
