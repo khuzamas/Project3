@@ -1,10 +1,10 @@
 <h1>Item show</h1>
 
-<p><%= @item.name %></p>
+<p><%= @item.options.first.name %></p>
 <p><%= @item.exp_date %></p>
 <p><%= @item.stock %></p>
-<p><%= @item.category %></p>
+<p><%= @item.options.first.category %></p>
 
-<%= link_to 'Back to Fridge', :back %>
+<%= link_to 'Back to Fridge', fridge_path(@fridge) %>
 
-<img src="<%= @item.image %>" alt="">
+<img src="<%= @item.options.first.image %>" alt="">

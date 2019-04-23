@@ -1,17 +1,26 @@
-<h1>Fridge index</h1>
+<h2><%= current_user.email %>'s Fridges</h2>
 
-<h1><%= current_user.email %>'s Fridges</h1>
+<table class="table">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Delete</th>
+    </tr>
+    <tbody>
+        
+        <% current_user.fridges.each do |fridge| %>
+            <tr>
+                <th scope="row"><%= fridge.id %></th>
+                <td><%= link_to fridge.name, fridge_path(fridge) %></td>        
+                <td><%= link_to 'Delete', fridge_path(fridge), method: :delete %></td> 
+            </tr>   
+        <% end %>
+        
+    </tbody>
+</table>
 
-<% current_user.fridges.each do |fridge| %>
-<li>
-<%= link_to fridge.name, fridge_path(fridge) %>    
-<%= link_to 'Delete', fridge_path(fridge), method: :delete, data: { confirm: 'Are you sure?' } %>
-</li>
-
-<% end %>
 <%= link_to 'Add New Fridge', new_fridge_path %>
-
-
-<br><%= link_to 'Back To Home Page', fridges_home_path %>
+<br>
+<%= link_to 'Back To Home Page', fridges_home_path %>
 
 

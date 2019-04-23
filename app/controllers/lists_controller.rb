@@ -33,9 +33,9 @@ class ListsController < ApplicationController
 
   def update
     list = List.find(params[:id])
-     list.update(list_params)
-     redirect_to lists_path
-end
+    list.update(list_params)
+    redirect_to lists_path
+  end
 
   def destroy 
     @list = List.find(params[:id])
