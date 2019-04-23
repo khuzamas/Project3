@@ -7,4 +7,4 @@
 
 <%= link_to 'Back to Fridge', fridge_path(@fridge) %>
 
-<img src="<%= @item.options.first.image %>" alt="">
+<%= image_tag "#{@item.options.first.image}" %>
