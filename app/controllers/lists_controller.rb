@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
+    @user = User.find(current_user.id)
   end
 
   def show
@@ -9,6 +10,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @user = current_user
   end
 
   def create
@@ -17,10 +19,14 @@ class ListsController < ApplicationController
   #   redirect_to @list
   #  end
     # @list = current_user.lists.build(list_params)
+    user= current_user
     @list= List.create(list_params)
-      redirect_to lists_path
+    user.lists << @list
+    @list.save
+    redirect_to url:"/lists"  
 
   end
+  
   def edit
     @list = List.find(params[:id])
   end
@@ -41,7 +47,7 @@ end
   private
     
   def list_params
-    params.require(:list).permit(:tiltle, :description)
+    params.require(:list).permit(:tiltle, :description, :Completed, :user_id)
   end
 
   def find_item

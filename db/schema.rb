@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_115445) do
+ActiveRecord::Schema.define(version: 2019_04_23_073240) do
 
   create_table "fridges", force: :cascade do |t|
     t.string "name"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2019_04_22_115445) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "Completed", default: false
   end
 
   create_table "options", force: :cascade do |t|
