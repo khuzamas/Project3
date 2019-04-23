@@ -1,33 +1,66 @@
-<h1>Fridge show</h1>
+<%= render 'nav' %>
+
+<h2>
+    <%= @fridge.name%>'s items
+</h2>
+
+<div class="fridge">
+<div class= "w">
+<%= image_tag "2.png" %>
+</div>
 
 
-You are in <%= @fridge.name %> Fridge 
+</div>
+
+<div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @fridge.items.each do |item| %>
+            <tr>
+                <% item.options.each do |o|%>
+                    <th scope="row"><%= item.id %></th>
+                    <td><%= link_to o.name, fridge_item_path(@fridge, item)%></td>
+                    <td><%= link_to 'Edit', edit_fridge_item_path(@fridge, item) %></td>
+                    <td><%= link_to 'Delete', fridge_item_path(@fridge, item), method: :delete %></td>
+                <% end %>
+            </tr> 
+        <% end %>  
+    </tbody>
+</table>
+
 <p>
-    <%= @fridge.name %>
+    <%= link_to 'Add item', "/fridges/#{@fridge.id}/items/new" %>
 </p>
 
-<p>items:</p>
-<% @fridge.items.each do |item| %>
-    <% item.options.each do |o|%>
-    <li>
-        <%= link_to o.name, fridge_item_path(item)%>
-        <%= link_to 'Delete', fridge_item_path(item), method: :delete %>
-    </li>
-        
-    <% end %>
-<% end %>
-
-<p>
-    <%= link_to 'Add item', new_fridge_item_path(@fridge) %>
-</p>
 <br>
 
-<p>Users</p>
-<% @fridge.users.each do |user| %>
-<li><%= user.email%></li>
-<% end %>
+<h3>Users of <%= @fridge.name %></h3>
+<table class= "table">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+    </tr>
 
-
+    <tbody>
+        
+            <% @fridge.users.each do |user| %>
+            <tr>
+                <th scope="row"><%= user.id %></th>   
+                <td><%= user.email%></td>
+            </tr> 
+            <% end %>
+        
+    </tbody>
+</table>
 
 <p>
 <%= link_to 'Add User To This Fridge', "/fridges/#{@fridge.id}/add_user"	 %>
@@ -37,3 +70,4 @@ You are in <%= @fridge.name %> Fridge
     <%= link_to 'All Fridges', fridges_path %>
 </p>
 
+</div>

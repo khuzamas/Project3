@@ -6,48 +6,37 @@ class ItemsController < ApplicationController
     end
 
     def show
+        @fridge = Fridge.find(params[:fridge_id])
         @item= Item.find(params[:id])
     end
 
     def new
-        @item = Item.new
         @fridge = Fridge.find(params[:fridge_id])
+        @item = Item.new
+        
     end
-
-    # def create
-    #     puts params
-    #     @item= Item.create()
-    #     new_option = Option.find(params[:item][:option])
-    #     # @fridge.items.push(new_item)
-    #     puts new_option
-    #     # @item.save
-    #     # new_item = Option.find(params[:option_ids])
-    #     @item.name= new_option.name
-    #     @item.category= new_option.category
-    #     @item.image= new_option.image
-    #     puts @item
-    #     # @item.options.push(new_item)
-    #     redirect_to @item
-    # end
 
     def create
         @fridge = Fridge.find(params[:fridge_id])
         @new_option = Option.find(params[:item][:option_ids])
-        item= @fridge.items.create(item_params)
-        item.options << @new_option
-        # item.name= new_option.name
-        redirect_to @fridge
+        @item= @fridge.items.create(item_params)
+        @item.options << @new_option
+        @item.save
+
+        redirect_to fridge_path(@fridge)
     end
 
     def edit
+        @fridge = Fridge.find(params[:fridge_id])
         @item= Item.find(params[:id])
     end
 
     def update
+        @fridge = Fridge.find(params[:fridge_id])
         @item = Item.find(params[:id])
  
         if @item.update(item_params)
-            redirect_to @item
+            redirect_to fridge_item_path(@fridge, @item)
         else
             render 'edit'
         end

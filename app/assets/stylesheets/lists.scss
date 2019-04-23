@@ -11,10 +11,12 @@ h1{
     font-size: 15px;
     color: gray;
 
+
 }
 .striker{
     text-decoration: line-through;
 }
+
 a:hover, a:visited, a:link, a:active{
     // pointer-events: none;
     text-decoration: none;
@@ -27,5 +29,11 @@ a:hover, a:visited, a:link, a:active{
     padding: 5px;
     background-color: rgb(197, 207, 197);
    }
+
+// img {
+//     width: 10%;
+//     height: 10%;
+// }
+
 
   
