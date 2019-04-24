@@ -88,6 +88,12 @@ class FridgesController < ApplicationController
         redirect_to fridges_path, notice: "Delete success"
     end
 
+    def empty
+        @fridge = Fridge.find(params[:id])
+        @fridge.items.destroy_all
+        redirect_to fridge_items_path(@fridge)
+    end
+
 
     private
         def fridge_params

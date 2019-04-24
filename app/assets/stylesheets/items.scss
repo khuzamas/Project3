@@ -5,19 +5,79 @@
 .show {
     display: flex;
     flex-direction:  row;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 40px;
 }
-.show-left {
 
+.show-right {
+    margin-top: 47px;
+    margin-left: 80px;
 }
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.d-flex{
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+.item-show {
+    width: 330px;
+    height: 334px;
+}
+
+//////
+
+.fridge {
+    margin-left: 200px;
+    width: 850px;
+    height: 850px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("project3.png");
+    position: relative;
+}
+
+.w {
+    position: absolute;
+    // right: -266px;
+    // top: 154px;
+    // width: 130px;
+    // height: 134px;
+    margin-top: 120px;
+    margin-left: 240px;
+    display: flex;
+    flex-flow: wrap;
+    width: 500px;
+}
+
+.one-item {
+    // flex-direction: column;
+}
+
+.item-o-group {
+    flex-direction: row;
+    margin-left: 18px;
+}
+
+.item-img {
+    width: 130px;
+    height: 134px;
+    margin-bottom: 15px;
+}
+
+.item-o-left {
+    position: relative;
+}
+
+.item-o-right {
+    position: relative;
+}
+
 
 .show-right {
 margin-top: 75px;
 }
-.button{
-    color: gray;
-    border-radius: 10%;
-    padding: 5px;
-    background-color: rgb(240, 228, 187);
-}
+

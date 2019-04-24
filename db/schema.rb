@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_183735) do
+ActiveRecord::Schema.define(version: 2019_04_24_103430) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "fridges", force: :cascade do |t|
     t.string "name"
@@ -45,13 +48,13 @@ ActiveRecord::Schema.define(version: 2019_04_23_183735) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.datetime "exp_date"
     t.integer "stock"
     t.string "category"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "fridge_id"
+    t.date "exp_date"
   end
 
   create_table "items_options", id: false, force: :cascade do |t|
