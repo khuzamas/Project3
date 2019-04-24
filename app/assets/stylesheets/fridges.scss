@@ -33,3 +33,50 @@
     width: 100%;
     height: 100%;
 }
+
+a:hover, a:visited, a:link, a:active{
+    // pointer-events: none;
+    text-decoration: none;
+    color:gray;
+}
+
+.navbar navbar-expand-lg fridge-nav {
+    background-color: #FE938C;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.temp {
+    height: 235px;
+    width: 235px;
+    // border: 2px black solid;
+    // border-radius: 50%;
+}
+
+.left {
+    float: left;
+
+}
+
+.right {
+    float: right;
+    // margin-top: 105px;
+    font-size: 40px;
+    justify-content: center;
+}
+
+.temp-div, .room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+

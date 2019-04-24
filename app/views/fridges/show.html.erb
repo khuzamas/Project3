@@ -1,49 +1,53 @@
-<%= render 'nav' %>
+<%= render partial: "nav", locals: {fridge: @fridge} %>
 
-<h2>
-    <%= @fridge.name%>'s items
-</h2>
-
-<div class="fridge">
+<!--<div class="fridge">
 <div class= "w">
 <%= image_tag "2.png" %>
+</div>-->
+
+<%# image_tag 'temp2-b.png', :class => "temp"%>
+
+<div class="info">
+    <div class="card left" style="width: 18rem;">
+    <div class="card-body">
+        <%= image_tag 'room.png' , :class => "card-img-top"%>
+    </div>
+
+    <h5 class="card-footer"><%= @fridge.room %></h5>
+    </div>
+
+    <div class="card right" style="width: 18rem;">
+        <div class="card-body">
+            <%= image_tag 'temp-c.png' , :class => "card-img-top"%>
+        </div>
+
+        <h5 class="card-footer"><%= @fridge.temp %></h5>
+    </div>
+    <!--<div class="room">
+        <div class="left">
+            <%= image_tag 'room.png' , :class => "temp"%>
+        </div>
+        <div class="right">
+            <%= @fridge.room %> 
+        </div>
+       
+    </div>
+    <div class="temp-div">
+        <div class="left">
+            <%= image_tag 'temp-b.png' , :class => "temp"%>
+        </div>
+        <div class="right">
+            <%= @fridge.temp %> 
+        </div>
+    </div>-->
 </div>
 
 
-</div>
 
-<div>
+<%# image_tag 'icons8-thermometer-64.png' , :class => "temp"%>
+<%# image_tag 'icons8-thermometer-96.png' , :class => "temp"%>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @fridge.items.each do |item| %>
-            <tr>
-                <% item.options.each do |o|%>
-                    <th scope="row"><%= item.id %></th>
-                    <td><%= link_to o.name, fridge_item_path(@fridge, item)%></td>
-                    <td><%= link_to 'Edit', edit_fridge_item_path(@fridge, item) %></td>
-                    <td><%= link_to 'Delete', fridge_item_path(@fridge, item), method: :delete %></td>
-                <% end %>
-            </tr> 
-        <% end %>  
-    </tbody>
-</table>
-
-<p>
-    <%= link_to 'Add item', "/fridges/#{@fridge.id}/items/new" %>
-</p>
-
-<br>
-
-<h3>Users of <%= @fridge.name %></h3>
+<!--<h3>Users of <%= @fridge.name %></h3>
 <table class= "table">
     <tr>
         <th scope="col">#</th>
@@ -70,4 +74,4 @@
     <%= link_to 'All Fridges', fridges_path %>
 </p>
 
-</div>
+</div>-->

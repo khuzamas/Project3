@@ -92,6 +92,6 @@ class FridgesController < ApplicationController
     private
         def fridge_params
             # params.require(:fridge).permit(:name, :item_ids => [])
-            params.require(:fridge).permit(:name, :user_ids => [])
+            params.require(:fridge).permit(:name, :temp, :room, :user_ids => [])
         end
 end
