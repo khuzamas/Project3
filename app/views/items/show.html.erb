@@ -2,20 +2,20 @@
 
 <div class="show">
     <div class="show-left">
-        <%= image_tag "#{@item.options.first.image}" %>
+        <%= image_tag "#{@item.options.first.image}", :class => 'item-show' %>
     </div>
 
     <div class="show-right">
-        <h3><%= @item.options.first.name %></h3>
+        <h2><%= @item.options.first.name %></h2>
+        <h5>Expiry Date:</h5>
         <p><%= @item.exp_date %></p>
+        <h5>Stock:</h5>
         <p><%= @item.stock %></p>
+        <h5>Category:</h5>
         <p><%= @item.options.first.category %></p>
     </div>
 </div>
 
-<div>
-<%= link_to 'Back to Fridge', fridge_path(@fridge) %>
-</div>
 
 
 

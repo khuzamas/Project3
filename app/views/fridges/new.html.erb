@@ -1,24 +1,34 @@
-<h1>Fridge new</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'FRIDGES', fridges_path, :class=>"navbar-brand" %>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'Add Fridge', new_fridge_path, :class => 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<%= form_for @fridge do |f| %>
-  <p>
-    <%= f.label :name, "Fridge Name" %>
-    <%= f.text_field :name %>
-  </p>
+<div class="new-f">
+  <%= form_for @fridge do |f| %>
+    <p>
+      <%= f.label :name, "Fridge Name" %>
+      <%= f.text_field :name, :class => 'form-control'%>
+    </p>
 
-  <p>
-    <%= f.label :temp, "Temperature" %>
-    <%= f.text_field :temp %>
-  </p>
+    <p>
+      <%= f.label :temp, "Temperature" %>
+      <%= f.text_field :temp, :class => 'form-control' %>
+    </p>
 
-  <p>
-    <%= f.label :room, "Room" %>
-    <%= f.text_field :room %>
-  </p>
+    <p>
+      <%= f.label :room, "Room" %>
+      <%= f.text_field :room, :class => 'form-control' %>
+    </p>
 
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Fridge index', fridges_path %>
+    <p>
+      <%= f.submit 'Create', :class => "button"%>
+    </p>
+  <% end %>
+</div>

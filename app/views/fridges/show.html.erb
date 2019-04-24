@@ -8,15 +8,15 @@
 <%# image_tag 'temp2-b.png', :class => "temp"%>
 
 <div class="info">
-    <div class="card left" style="width: 18rem;">
-    <div class="card-body">
-        <%= image_tag 'room.png' , :class => "card-img-top"%>
+    <div class="card-left" style="width: 18rem;">
+        <div class="card-body">
+            <%= image_tag 'room.png' , :class => "card-img-top"%>
+        </div>
+
+        <h5 class="card-footer"><%= @fridge.room %></h5>
     </div>
 
-    <h5 class="card-footer"><%= @fridge.room %></h5>
-    </div>
-
-    <div class="card right" style="width: 18rem;">
+    <div class="card-right" style="width: 18rem;">
         <div class="card-body">
             <%= image_tag 'temp-c.png' , :class => "card-img-top"%>
         </div>
