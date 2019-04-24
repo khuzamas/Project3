@@ -1,23 +1,27 @@
  <%= render 'lists/nav' %>
-
-<h1> new shopping list </h1>
+<div class="d-flex justify-content-center">
 <%= form_for @list do |f| %>
-<div class="form-group">
-<%= f.label "item" %>
+<br> 
+<%= f.label "Item" %>
+<br> 
     <%= f.text_field :tiltle%>
-    <small class="form-text text-muted"> Add what you need </small>
-  </div>
-    <br>
+    <small class="form-text text-muted"> Add what you need </small>  
+<br> 
 <%= f.label "description" %>
+<br> 
 	<%= f.text_field  :description %>
 <br>
+<br> 
     <%= f.label "Completed" %>
     <%=  f.check_box :Completed%>
 <br>
+<br>
 	<%= f.submit "Add to my list", :class => "button" %>
-  
 <% end %>
+</div>
+<div>
+        <%= image_tag 'list.gif' , :class => "card-img-top"%>
+    </div>
 
-<%= link_to 'Back', lists_path %>
 
 

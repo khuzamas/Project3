@@ -5,7 +5,6 @@
         <%= f.label 'Items:'%>
         <%= f.collection_select(:option_ids, Option.all, :id, :name, {}, { :class => 'form-control' })%>
 
-        
         <p>
             <%= f.label :exp_date, "Exp date", :for=>"validationServer01" %>
             <br>
