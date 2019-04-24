@@ -8,10 +8,13 @@
             <% if j > 0 %>
                 <% if i%3==0 %>
                     <br>
+                    <%# link_to (image_tag "https://img.icons8.com/bubbles/50/000000/multi-edit.png", :class => 'item-o-left'), edit_fridge_item_path(@fridge, item)%>
+                    <%# link_to (image_tag "https://img.icons8.com/bubbles/50/000000/close-window.png" , :class => 'item-o-right'), edit_fridge_item_path(@fridge, item)%>
                 <% end %>
-                <%# link_to (image_tag "https://img.icons8.com/bubbles/50/000000/multi-edit.png", :class => 'item-o-left'), edit_fridge_item_path(@fridge, item)%>
+               
                 <%= link_to (image_tag item.options.first.image, :class => 'item-img'), fridge_item_path(@fridge, item)%>
-                <%# link_to (image_tag "https://img.icons8.com/bubbles/50/000000/close-window.png" , :class => 'item-o-right'), edit_fridge_item_path(@fridge, item)%>
+                <%# link_to (image_tag "https://img.icons8.com/bubbles/50/000000/multi-edit.png", :class => 'item-o-left'), edit_fridge_item_path(@fridge, item)%>
+                <%#link_to (image_tag "https://img.icons8.com/bubbles/50/000000/close-window.png" , :class => 'item-o-right'), edit_fridge_item_path(@fridge, item)%>
                 
 
                 <% i = i +1 %>
