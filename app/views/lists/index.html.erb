@@ -1,6 +1,6 @@
 
  <%= render 'lists/nav' %>
-  <h1><%= current_user.email %>'s  Shopping list</h1>
+  <h1> Grocery Shopping list</h1>
   
 <table class="table">
   <thead>
@@ -23,7 +23,7 @@
        <%= form_for(list) do |f| %>
        <%= f.text_field :tiltle, type: 'hidden' %>
        <%=  f.check_box :Completed, :checked => false, :style => 'visibility: hidden'%>
-       <%= f.submit "Uncross", class:'btn btn-outline-secondary btn-sm' %>
+       <%= f.submit "Uncheck", class:'btn btn-outline-secondary btn-sm' %>
       <% end %>
       </td>
       <td> <%= link_to "Edit", edit_list_path(list)%> </td>
@@ -40,7 +40,7 @@
        <%= f.text_field :tiltle, type: 'hidden' %>
        <%= f.text_field  :description, type: 'hidden' %>
        <%=  f.check_box :Completed, :checked => true, :style => 'visibility: hidden'%>
-       <%= f.submit "Cross", class:'btn btn-outline-secondary btn-sm' %>
+       <%= f.submit "Check", class:'btn btn-outline-secondary btn-sm' %>
       <% end %>
       </td>
       <td> <%= link_to "Edit", edit_list_path(list)%> </td>
