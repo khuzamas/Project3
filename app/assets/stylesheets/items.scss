@@ -47,12 +47,24 @@
     // height: 134px;
     margin-top: 120px;
     margin-left: 240px;
+    display: flex;
+    flex-flow: wrap;
+    width: 500px;
+}
+
+.one-item {
+    // flex-direction: column;
+}
+
+.item-o-group {
+    flex-direction: row;
+    margin-left: 18px;
 }
 
 .item-img {
     width: 130px;
     height: 134px;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
 }
 
 .item-o-left {
@@ -62,3 +74,4 @@
 .item-o-right {
     position: relative;
 }
+

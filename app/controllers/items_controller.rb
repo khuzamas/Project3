@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
         fridge= Fridge.find(params[:fridge_id])
         @item = fridge.items.find(params[:id])
         @item.destroy
-        redirect_to fridge
+        redirect_to fridge_items_path
     end
 
     private
