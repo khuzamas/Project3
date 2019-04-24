@@ -1,10 +1,21 @@
-<h1>Item show</h1>
+<%= render partial: "fridges/nav", locals: {fridge: @fridge} %>
 
-<p><%= @item.options.first.name %></p>
-<p><%= @item.exp_date %></p>
-<p><%= @item.stock %></p>
-<p><%= @item.options.first.category %></p>
+<div class="show">
+    <div class="show-left">
+        <%= image_tag "#{@item.options.first.image}" %>
+    </div>
 
+    <div class="show-right">
+        <h3><%= @item.options.first.name %></h3>
+        <p><%= @item.exp_date %></p>
+        <p><%= @item.stock %></p>
+        <p><%= @item.options.first.category %></p>
+    </div>
+</div>
+
+<div>
 <%= link_to 'Back to Fridge', fridge_path(@fridge) %>
+</div>
 
-<%= image_tag "#{@item.options.first.image}" %>
+
+

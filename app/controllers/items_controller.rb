@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
     def index
-        @items= Item.all
+        # @items= Item.all
         @fridge = Fridge.find(params[:fridge_id])
+        # @items= @fridge.items.find(params[:fridge_id])
     end
 
     def show
@@ -23,7 +24,7 @@ class ItemsController < ApplicationController
         @item.options << @new_option
         @item.save
 
-        redirect_to fridge_path(@fridge)
+        redirect_to fridge_items_path(@fridge)
     end
 
     def edit

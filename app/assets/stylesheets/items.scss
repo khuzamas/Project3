@@ -1,3 +1,17 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show {
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+.show-left {
+
+}
+
+.show-right {
+margin-top: 75px;
+}

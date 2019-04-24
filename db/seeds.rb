@@ -17,16 +17,36 @@ List.create(tiltle: 'lemon', description: '4 killos')
 
 # User.destroy_all
 
-User.create(email: "ri1n1g")
-User.create(email: "ri1nfffff")
-User.create(email: "eeeeeee")
+# User.create(email: "ri1n1g")
+# User.create(email: "ri1nfffff")
+# User.create(email: "eeeeeee")
 
 Option.destroy_all
 
-Option.create(name: "watermelon", category: "fruit", image: "2.png")
-Option.create(name: "2", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-Option.create(name: "3", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-Option.create(name: "4", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
-
+Option.create(name: "Watermelon", category: "fruit", image: "2.png")
+Option.create(name: "Strawberry", category: "fruit", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "Mushroom", category: "food", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "Carrot", category: "vegetables", image: "https://image.flaticon.com/icons/png/512/45/45332.png")
+Option.create(name: "Olives", category: "vegetable", image: "2.png")
+Option.create(name: "Jam", category: "food", image: "2.png")
+Option.create(name: "Tomatoes", category: "fruit", image: "2.png")
+Option.create(name: "Cake", category: "dessert", image: "2.png")
+Option.create(name: "Cheese", category: "dairy", image: "2.png")
+Option.create(name: "Doughnut", category: "dessert", image: "2.png")
+Option.create(name: "Milk", category: "dairy", image: "2.png")
+Option.create(name: "Chocolate", category: "dessert", image: "2.png")
+Option.create(name: "Pineapple", category: "fruit", image: "2.png")
+Option.create(name: "Cherry", category: "fruit", image: "2.png")
+Option.create(name: "Fish", category: "meat", image: "2.png")
+Option.create(name: "Pomegranate", category: "fruit", image: "2.png")
+Option.create(name: "Lemon", category: "fruit", image: "2.png")
+Option.create(name: "Eggs", category: "food", image: "2.png")
+Option.create(name: "Coconut", category: "food", image: "2.png")
+Option.create(name: "Pear", category: "fruit", image: "2.png")
+Option.create(name: "Apple", category: "fruit", image: "2.png")
+Option.create(name: "Kiwi", category: "fruit", image: "2.png")
+Option.create(name: "Chicken", category: "meat", image: "2.png")
+Option.create(name: "Meat", category: "meat", image: "2.png")
+Option.create(name: "Sushi", category: "food", image: "2.png")
 
 # Fridge.destroy_all
