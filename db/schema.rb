@@ -19,19 +19,18 @@ ActiveRecord::Schema.define(version: 2019_04_24_103430) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "info_id"
     t.integer "temp"
     t.string "room"
   end
 
   create_table "fridges_items", id: false, force: :cascade do |t|
-    t.integer "fridge_id", null: false
-    t.integer "item_id", null: false
+    t.bigint "fridge_id", null: false
+    t.bigint "item_id", null: false
   end
 
   create_table "fridges_options", id: false, force: :cascade do |t|
-    t.integer "fridge_id", null: false
-    t.integer "option_id", null: false
+    t.bigint "fridge_id", null: false
+    t.bigint "option_id", null: false
   end
 
   create_table "fridges_users", id: false, force: :cascade do |t|
@@ -53,13 +52,12 @@ ActiveRecord::Schema.define(version: 2019_04_24_103430) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "fridge_id"
     t.date "exp_date"
   end
 
   create_table "items_options", id: false, force: :cascade do |t|
-    t.integer "item_id", null: false
-    t.integer "option_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "option_id", null: false
   end
 
   create_table "lists", force: :cascade do |t|
@@ -68,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_103430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.boolean "Completed"
+    t.boolean "Completed", default: false
   end
 
   create_table "options", force: :cascade do |t|
